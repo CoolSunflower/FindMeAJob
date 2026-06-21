@@ -132,7 +132,20 @@ This provides a quick overview of platform statistics.
 
 ---
 
-# Application Screens
+# UI Screenshots
+
+![Home Page 1](assets/home1.png)
+![Home Page 2](assets/home2.png)
+
+![Jobs Page](assets/jobs.png)
+![Jobs Page Search](assets/jobs2.png)
+
+![Job Details](assets/job_details.png)
+![Company Details](assets/company_details.png)
+
+![About Page](assets/about.png)
+
+# Application Screens (Planned UI Design)
 
 ## 1. Home Screen
 
@@ -151,10 +164,6 @@ Layout:
 
 ```text
 FindMeAJob
---------------------------------
-
-[ Search Jobs Shortcut ]
-
 --------------------------------
 Statistics
 --------------------------------

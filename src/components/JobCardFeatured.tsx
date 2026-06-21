@@ -24,7 +24,7 @@ export default function JobCardFeatured({ job, companyName, onPress }: Props) {
 
 const styles = StyleSheet.create({
   card: {
-    width: 300,
+    width: "100%",
     backgroundColor: "#2563EB",
     padding: 20,
     borderRadius: 16,
