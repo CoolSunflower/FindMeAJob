@@ -1,56 +1,569 @@
-# Welcome to your Expo app 👋
+# FindMeAJob
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Project Description
 
-## Get started
+FindMeAJob is a React Native mobile application designed to help users discover and explore job opportunities from various companies. The application provides a job-search experience through featured job recommendations, searchable job listings, detailed company profiles, job bookmarking functionality, and job information pages.
 
-1. Install dependencies
+The application is built using React Native Functional Components and React Hooks, with a focus on reusable components, responsive layouts, and clean project architecture.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+# Problem Statement
 
-   ```bash
-   npx expo start
-   ```
+(This is slightly updated from original requirement to include additional company details page & job bookmarking feature)
 
-In the output, you'll find options to open the app in a
+Develop a Job Portal Mobile Application that enables users to browse job opportunities from different companies.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+The application should:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Display job listings
+- Allow users to search available jobs
+- Show detailed job information
+- Provide company information
+- Implement Bottom Tab Navigation
+- Use reusable React Native components
 
-## Get a fresh project
+---
 
-When you're ready, run:
+# Features
 
-```bash
-npm run reset-project
+## Core Features
+
+### Home Screen
+
+- Featured Jobs Carousel
+- Latest Openings Section
+- Top Companies Section
+- Job Statistics Dashboard
+- Quick navigation to job details
+
+### Jobs Screen
+
+- Search Jobs by title, company, or location
+- Category-based filtering using selectable chips
+- Responsive FlatList layout
+- Compact reusable Job Cards
+
+### Job Details Screen
+
+- Complete job information
+- Salary details
+- Experience requirements
+- Job description
+- Company overview
+- Save/Unsave Job functionality
+- Navigate to Company Details Screen
+
+### Company Details Screen
+
+- Company profile information
+- Industry information
+- Company ratings
+- Employee count
+- Benefits offered
+- List of open positions in the company
+
+### About Screen
+
+- Application information
+- Features overview
+- Developer information
+- Technology stack information
+
+---
+
+# Additional Features
+
+## Save Jobs
+
+Users can bookmark jobs for future reference.
+
+Features:
+
+- Save Job from Job Details Screen
+- Remove Saved Job
+- Saved Jobs Count displayed on Home Screen Dashboard
+
+---
+
+## Company Profiles
+
+Each company contains dedicated information including:
+
+- Company Name
+- Industry
+- Location
+- Company Description
+- Employee Count
+- Company Rating
+- Benefits Offered
+
+Users can navigate from Job Details Screen to Company Details Screen.
+
+---
+
+## Category-Based Job Filtering
+
+Jobs can be filtered using category chips.
+
+Examples:
+
+- All
+- Software Development
+- Design
+- Marketing
+- Sales
+- Human Resources
+
+The selected chip visually highlights the active category.
+
+---
+
+## Job Statistics Dashboard
+
+The Home Screen includes a dashboard displaying:
+
+- Total Jobs
+- Total Companies
+- Saved Jobs
+- Featured Jobs
+
+This provides a quick overview of platform statistics.
+
+---
+
+# Application Screens
+
+## 1. Home Screen
+
+Purpose:
+Serve as the landing page of the application.
+
+Components:
+
+- Header
+- Featured Jobs Carousel
+- Latest Openings Horizontal List
+- Statistics Dashboard
+- Top Companies Section
+
+Layout:
+
+```text
+FindMeAJob
+--------------------------------
+
+[ Search Jobs Shortcut ]
+
+--------------------------------
+Statistics
+--------------------------------
+
++----------+ +----------+
+| Jobs     | |Companies |
++----------+ +----------+
+
++----------+ +----------+
+| Saved    | |Featured  |
++----------+ +----------+
+
+--------------------------------
+Featured Jobs
+--------------------------------
+
+[ Featured Job Carousel ]
+
+--------------------------------
+Latest Openings
+--------------------------------
+
+[ Horizontal Job Cards ]
+
+--------------------------------
+Top Companies
+--------------------------------
+
+[ Company Cards ]
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-### Other setup steps
+## 2. Jobs Screen
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Purpose:
+Allow users to browse and search all available jobs.
 
-## Learn more
+Components:
 
-To learn more about developing your project with Expo, look at the following resources:
+- Search Bar
+- Category Chips
+- FlatList of Jobs
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Layout:
 
-## Join the community
+```text
+Jobs
+--------------------------------
 
-Join our community of developers creating universal apps.
+[ Search Jobs... ]
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+--------------------------------
+
+[All][Saved][Software][Design]
+[Marketing][Sales][HR]
+
+--------------------------------
+
++--------------------+
+| Job Card           |
++--------------------+
+
++--------------------+
+| Job Card           |
++--------------------+
+```
+
+---
+
+## 3. Job Details Screen
+
+Purpose:
+Display complete information about a selected job.
+
+Components:
+
+- Job Header
+- Salary Information
+- Experience Requirement
+- Description
+- Company Information
+- Save Job Button
+- View Company Button
+
+Layout:
+
+```text
+< Back
+
+Frontend Developer
+
+CompanyName
+
+Salary
+₹10,00,000
+
+Experience
+2-4 Years
+
+--------------------------------
+Description
+--------------------------------
+
+Job description content...
+
+--------------------------------
+Company Information
+--------------------------------
+
+CompanyName
+Rating: 4.6
+
+[ View Company ]
+
+--------------------------------
+
+[ Save Job ]
+```
+
+---
+
+## 4. Company Details Screen
+
+Purpose:
+Display detailed information about a company.
+
+Components:
+
+- Company Information
+- Rating
+- Benefits
+- Open Positions
+
+Layout:
+
+```text
+< Back
+
+TechNova Solutions
+
+Technology Industry
+
+Rating: 4.6
+
+Employees:
+500+
+
+--------------------------------
+About Company
+--------------------------------
+
+Company description...
+
+--------------------------------
+Benefits
+--------------------------------
+
+• Health Insurance
+• Flexible Hours
+• Remote Work
+
+--------------------------------
+Open Positions
+--------------------------------
+
+Frontend Developer
+Backend Developer
+UI Designer
+```
+
+---
+
+## 5. About Screen
+
+Purpose:
+Provide information about the application and developer.
+
+Layout:
+
+```text
+About FindMeAJob
+
+Version 1.0.0
+
+--------------------------------
+
+FindMeAJob helps job seekers
+discover opportunities from
+multiple companies.
+
+--------------------------------
+
+Developer Information
+
+Name:
+Adarsh Gupta
+
+GitHub:
+CoolSunflower
+
+--------------------------------
+
+Thank You For Using FindMeAJob
+```
+
+---
+
+# Reusable Components
+
+## JobCardCompact
+
+Used in:
+
+- Jobs Screen
+- Latest Openings Section
+
+Displays:
+
+- Job Title
+- Company Name
+- Location
+- Salary
+- Experience
+
+---
+
+## JobCardFeatured
+
+Used in:
+
+- Featured Jobs Carousel
+
+Displays:
+
+- Featured Badge
+- Job Title
+- Company Name
+- Salary
+- Experience
+- Location
+
+---
+
+## CompanyCard
+
+Used in:
+
+- Home Screen
+- Company Details Screen
+
+Displays:
+
+- Company Name
+- Industry
+- Rating
+
+---
+
+## SearchBar
+
+Reusable search component used in:
+
+- Home Screen
+- Jobs Screen
+
+---
+
+## CategoryChip
+
+Reusable filter chip component.
+
+States:
+
+- Selected
+- Unselected
+
+Used for category filtering.
+
+---
+
+## StatCard
+
+Reusable dashboard card displaying statistics.
+
+Used in:
+
+- Home Screen
+
+Examples:
+
+- Total Jobs
+- Total Companies
+- Saved Jobs
+- Featured Jobs
+
+---
+
+# Data Model
+
+## Company Type
+
+```typescript
+type Company = {
+  id: string;
+  name: string;
+  industry: string;
+  location: string;
+  description: string;
+  employeeCount: string;
+  rating: number;
+  benefits: string[];
+};
+```
+
+---
+
+## Job Type
+
+```typescript
+type Job = {
+  id: string;
+  title: string;
+  companyId: string;
+  location: string;
+  salary: string;
+  experience: string;
+  category: string;
+  description: string;
+  featured: boolean;
+  latest: boolean;
+};
+```
+
+---
+
+## Application State
+
+```typescript
+type AppState = {
+  companies: Company[];
+  jobs: Job[];
+  savedJobIds: string[];
+};
+```
+
+---
+
+# Navigation Structure
+
+The application uses React Navigation.
+
+```text
+Root Stack
+│
+├── Bottom Tabs
+│   ├── Home
+│   ├── Jobs
+│   └── About
+│
+├── Job Details
+│
+└── Company Details
+```
+
+---
+
+# State Management
+
+The application uses React Context API.
+
+Responsibilities:
+
+- Manage jobs data
+- Manage companies data
+- Manage saved jobs
+- Handle search functionality
+- Handle category filtering
+- Provide helper functions across screens
+
+---
+
+# Technology Stack
+
+- React Native
+- TypeScript
+- React Navigation
+- React Context API
+- React Hooks
+- FlatList
+- ScrollView
+
+---
+
+# Installation & Setup
+
+```bash
+## Clone Repository
+git clone https://github.com/CoolSunflower/FindMeAJob.git
+
+## Navigate To Project
+cd FindMeAJob
+
+## Install Dependencies
+npm install
+
+## Start Metro Bundler
+npm start
+
+## Run Android Application
+npm run android
+```
