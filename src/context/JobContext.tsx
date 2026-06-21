@@ -12,6 +12,7 @@ type JobContextType = {
   saveJob: (jobId: string) => void;
   unsaveJob: (jobId: string) => void;
   isJobSaved: (jobId: string) => boolean;
+  getSavedJobs: () => Job[];
 
   getJobById: (jobId: string) => Job | undefined;
   getCompanyById: (companyId: string) => Company | undefined;
@@ -51,6 +52,10 @@ export const JobProvider = ({ children }: ProviderProps) => {
 
   const isJobSaved = (jobId: string) => {
     return savedJobIds.includes(jobId);
+  };
+
+  const getSavedJobs = () => {
+    return jobs.filter((job) => savedJobIds.includes(job.id));
   };
 
   const getJobById = (jobId: string) => {
@@ -111,6 +116,7 @@ export const JobProvider = ({ children }: ProviderProps) => {
         saveJob,
         unsaveJob,
         isJobSaved,
+        getSavedJobs,
 
         getJobById,
         getCompanyById,

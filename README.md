@@ -2,159 +2,102 @@
 
 ## Project Description
 
-FindMeAJob is a React Native mobile application designed to help users discover and explore job opportunities from various companies. The application provides a job-search experience through featured job recommendations, searchable job listings, detailed company profiles, job bookmarking functionality, and job information pages.
+FindMeAJob is a React Native mobile application that helps users discover job opportunities from different companies. The app provides an easy way to browse available positions, search jobs, explore company profiles, and save interesting opportunities for later. The project is built using React Native, TypeScript, React Navigation, React Hooks, and the Context API.
 
-The application is built using React Native Functional Components and React Hooks, with a focus on reusable components, responsive layouts, and clean project architecture.
+## Original Problem Statement
 
----
+```
+Job Portal Mobile App
 
-# Problem Statement
+Description
+Develop a Job Portal Mobile Application that enables users to browse job opportunities from different companies. The application should display job listings using attractive card layouts and allow users to search and view detailed job information. The app should provide a professional and user-friendly experience for job seekers.
 
-(This is slightly updated from original requirement to include additional company details page & job bookmarking feature)
+Screens Required
+- Home Screen
+- Jobs Screen
+- Job Details Screen
+- About Screen
 
-Develop a Job Portal Mobile Application that enables users to browse job opportunities from different companies.
+Fields
+- Job Title
+- Company Name
+- Location
+- Salary
+- Experience
+- Description
 
-The application should:
+Implement
+- Bottom Tab Navigation
+- Job Card Display
+- Search Jobs
+- Job Details View
+- Responsive Layout
 
-- Display job listings
-- Allow users to search available jobs
-- Show detailed job information
-- Provide company information
-- Implement Bottom Tab Navigation
-- Use reusable React Native components
+Additional Features
+- Featured Jobs
+- Latest Openings
+- Company Information Section
+```
 
----
-
-# Features
+# Final Feature Set
 
 ## Core Features
 
-### Home Screen
+1. Home Screen: The application includes a Home screen that highlights featured jobs, latest openings, top companies, and platform statistics such as total jobs, companies, saved jobs, and featured opportunities. Users can quickly explore recommended positions and navigate to detailed job information.
+2. Jobs Screen: The Jobs screen allows users to browse all available opportunities, search by job title, company, or location, and filter results using job categories such as Software Development, Design, Marketing, Sales, and Human Resources. The interface is designed to remain responsive and easy to use even with larger datasets.
+3. Job Details Screen: Each job has a dedicated details page that displays information such as salary, experience requirements, job description, and company information. Users can also save or remove jobs from their bookmarks and view the company profile associated with the position.
+4. Company Details Screen: The Company Details screen provides additional information about an organization, including its industry, location, employee count, rating, benefits, description, and currently available positions.
+5. About Screen: An About screen is included to provide information about the application, technologies used, and developer details.
 
-- Featured Jobs Carousel
-- Latest Openings Section
-- Top Companies Section
-- Job Statistics Dashboard
-- Quick navigation to job details
+## Additional Features
 
-### Jobs Screen
+1. Save Jobs: Users can save jobs they are interested in and access them later. Saved jobs are tracked using the application's global state (React Context API) and are reflected in the statistics section on the Home screen. They can also be viewed by category filtering on Jobs page
+2. Company Profiles: Each company contains dedicated information including: Company Name, Industry, Location, Company Description, Employee Count, Company Rating, Benefits Offered. Users can navigate from Job Details Screen to Company Details Screen.
+3. Category-Based Job Filtering: Jobs can be filtered using category chips. Examples: All, Software Development, Design, Marketing, Sales, Human Resources
+4. Job Statistics Dashboard: The Home Screen includes a dashboard displaying: Total Jobs, Total Companies, Saved Jobs, Featured Jobs
 
-- Search Jobs by title, company, or location
-- Category-based filtering using selectable chips
-- Responsive FlatList layout
-- Compact reusable Job Cards
+# UI Screenshots
 
-### Job Details Screen
+![Home Page 1](assets/home1.png)
+![Home Page 2](assets/home2.png)
 
-- Complete job information
-- Salary details
-- Experience requirements
-- Job description
-- Company overview
-- Save/Unsave Job functionality
-- Navigate to Company Details Screen
+![Jobs Page](assets/jobs.png)
+![Jobs Page Search](assets/jobs2.png)
 
-### Company Details Screen
+![Job Details](assets/job_details.png)
+![Company Details](assets/company_details.png)
 
-- Company profile information
-- Industry information
-- Company ratings
-- Employee count
-- Benefits offered
-- List of open positions in the company
+![About Page](assets/about.png)
 
-### About Screen
+# Installation & Setup
 
-- Application information
-- Features overview
-- Developer information
-- Technology stack information
+```bash
+## Clone Repository
+git clone https://github.com/CoolSunflower/FindMeAJob.git
 
----
+## Navigate To Project
+cd FindMeAJob
 
-# Additional Features
+## Install Dependencies
+npm install
 
-## Save Jobs
+## Start Metro Bundler
+npm start
 
-Users can bookmark jobs for future reference.
+## Run Android Application
+npm run android
+```
 
-Features:
-
-- Save Job from Job Details Screen
-- Remove Saved Job
-- Saved Jobs Count displayed on Home Screen Dashboard
-
----
-
-## Company Profiles
-
-Each company contains dedicated information including:
-
-- Company Name
-- Industry
-- Location
-- Company Description
-- Employee Count
-- Company Rating
-- Benefits Offered
-
-Users can navigate from Job Details Screen to Company Details Screen.
-
----
-
-## Category-Based Job Filtering
-
-Jobs can be filtered using category chips.
-
-Examples:
-
-- All
-- Software Development
-- Design
-- Marketing
-- Sales
-- Human Resources
-
-The selected chip visually highlights the active category.
-
----
-
-## Job Statistics Dashboard
-
-The Home Screen includes a dashboard displaying:
-
-- Total Jobs
-- Total Companies
-- Saved Jobs
-- Featured Jobs
-
-This provides a quick overview of platform statistics.
-
----
-
-# Application Screens
+# Application Screens (Planned UI Design)
 
 ## 1. Home Screen
 
-Purpose:
-Serve as the landing page of the application.
-
-Components:
-
-- Header
-- Featured Jobs Carousel
-- Latest Openings Horizontal List
-- Statistics Dashboard
-- Top Companies Section
+Serve as the landing page of the application with: Header, Featured Jobs Carousel, Latest Openings Horizontal List, Statistics Dashboard, Top Companies Section.
 
 Layout:
 
 ```text
 FindMeAJob
---------------------------------
-
-[ Search Jobs Shortcut ]
-
 --------------------------------
 Statistics
 --------------------------------
@@ -162,7 +105,6 @@ Statistics
 +----------+ +----------+
 | Jobs     | |Companies |
 +----------+ +----------+
-
 +----------+ +----------+
 | Saved    | |Featured  |
 +----------+ +----------+
@@ -177,7 +119,7 @@ Featured Jobs
 Latest Openings
 --------------------------------
 
-[ Horizontal Job Cards ]
+[ Job Cards ]
 
 --------------------------------
 Top Companies
@@ -186,18 +128,9 @@ Top Companies
 [ Company Cards ]
 ```
 
----
-
 ## 2. Jobs Screen
 
-Purpose:
-Allow users to browse and search all available jobs.
-
-Components:
-
-- Search Bar
-- Category Chips
-- FlatList of Jobs
+Allow users to browse and search all available jobs. Includes: Search Bar, Category Chips, FlatList of Jobs.
 
 Layout:
 
@@ -217,28 +150,14 @@ Jobs
 +--------------------+
 | Job Card           |
 +--------------------+
-
 +--------------------+
 | Job Card           |
 +--------------------+
 ```
 
----
-
 ## 3. Job Details Screen
 
-Purpose:
-Display complete information about a selected job.
-
-Components:
-
-- Job Header
-- Salary Information
-- Experience Requirement
-- Description
-- Company Information
-- Save Job Button
-- View Company Button
+Displays complete information about a selected job. Includes: Job Header, Salary Information, Experience Requirement, Description, Company Information, Save Job Button, View Company Button.
 
 Layout:
 
@@ -275,19 +194,9 @@ Rating: 4.6
 [ Save Job ]
 ```
 
----
-
 ## 4. Company Details Screen
 
-Purpose:
-Display detailed information about a company.
-
-Components:
-
-- Company Information
-- Rating
-- Benefits
-- Open Positions
+Displays detailed information about a company. Includes: Company Information, Rating, Benefits, Open Positions.
 
 Layout:
 
@@ -326,19 +235,14 @@ Backend Developer
 UI Designer
 ```
 
----
-
 ## 5. About Screen
 
-Purpose:
-Provide information about the application and developer.
+Provides information about the application and developer.
 
 Layout:
 
 ```text
 About FindMeAJob
-
-Version 1.0.0
 
 --------------------------------
 
@@ -361,101 +265,20 @@ CoolSunflower
 Thank You For Using FindMeAJob
 ```
 
----
+## Planned Reusable Components
 
-# Reusable Components
+1. JobCardCompact: Used in: Jobs Screen, Latest Openings Section. Displays: Job Title, Company Name, Location, Salary, Experience
+2. JobCardFeatured: Used in: Featured Jobs Carousel. Displays: Featured Badge, Job Title, Company Name, Salary, Experience, Location
+3. CompanyCard: Used in: Home Screen, Company Details Screen. Displays: Company Name, Industry, Rating
+4. SearchBar: Used in Jobs Page
+5. CategoryChip: Used in Jobs Page for all categories
+6. StatCard: Used in Home Screen for 4 statistics
 
-## JobCardCompact
+# Technical Planning
 
-Used in:
+## Data Model
 
-- Jobs Screen
-- Latest Openings Section
-
-Displays:
-
-- Job Title
-- Company Name
-- Location
-- Salary
-- Experience
-
----
-
-## JobCardFeatured
-
-Used in:
-
-- Featured Jobs Carousel
-
-Displays:
-
-- Featured Badge
-- Job Title
-- Company Name
-- Salary
-- Experience
-- Location
-
----
-
-## CompanyCard
-
-Used in:
-
-- Home Screen
-- Company Details Screen
-
-Displays:
-
-- Company Name
-- Industry
-- Rating
-
----
-
-## SearchBar
-
-Reusable search component used in:
-
-- Home Screen
-- Jobs Screen
-
----
-
-## CategoryChip
-
-Reusable filter chip component.
-
-States:
-
-- Selected
-- Unselected
-
-Used for category filtering.
-
----
-
-## StatCard
-
-Reusable dashboard card displaying statistics.
-
-Used in:
-
-- Home Screen
-
-Examples:
-
-- Total Jobs
-- Total Companies
-- Saved Jobs
-- Featured Jobs
-
----
-
-# Data Model
-
-## Company Type
+Company Type
 
 ```typescript
 type Company = {
@@ -470,9 +293,7 @@ type Company = {
 };
 ```
 
----
-
-## Job Type
+Job Type
 
 ```typescript
 type Job = {
@@ -489,9 +310,7 @@ type Job = {
 };
 ```
 
----
-
-## Application State
+Application State
 
 ```typescript
 type AppState = {
@@ -501,11 +320,9 @@ type AppState = {
 };
 ```
 
----
+## Navigation Structure
 
-# Navigation Structure
-
-The application uses React Navigation.
+The application uses React Expo Navigation.
 
 ```text
 Root Stack
@@ -520,24 +337,11 @@ Root Stack
 └── Company Details
 ```
 
----
+## State Management
 
-# State Management
+Uses React Context API to: Manage jobs data, Manage companies data, Manage saved jobs, Handle search functionality, Handle category filtering, Provide helper functions across screens
 
-The application uses React Context API.
-
-Responsibilities:
-
-- Manage jobs data
-- Manage companies data
-- Manage saved jobs
-- Handle search functionality
-- Handle category filtering
-- Provide helper functions across screens
-
----
-
-# Technology Stack
+## Technology Stack
 
 - React Native
 - TypeScript
@@ -546,24 +350,3 @@ Responsibilities:
 - React Hooks
 - FlatList
 - ScrollView
-
----
-
-# Installation & Setup
-
-```bash
-## Clone Repository
-git clone https://github.com/CoolSunflower/FindMeAJob.git
-
-## Navigate To Project
-cd FindMeAJob
-
-## Install Dependencies
-npm install
-
-## Start Metro Bundler
-npm start
-
-## Run Android Application
-npm run android
-```
